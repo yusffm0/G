@@ -922,11 +922,11 @@ window.addEventListener("resize", ()=>{
 /* ================= SONGS ================= */
 (function(){
   const songs = [
-    { title: "505", artist: "Arctic Monkeys" },
-    { title: "No Ordinary Love", artist: "Sade" },
-    { title: "Cigarettes Out The Window", artist: "TV Girl" },
-    { title: "Min Shaf Habibi", artist: "Jadal" },
-    { title: "Yumain O Leila", artist: "Jadal" }
+    { title: "505", artist: "Arctic Monkeys", url: "https://music.apple.com/eg/song/505/251499791" },
+    { title: "No Ordinary Love", artist: "Sade", url: "https://music.apple.com/us/song/158796562" },
+    { title: "Cigarettes Out The Window", artist: "TV Girl", url: "https://music.apple.com/us/song/1623924746" },
+    { title: "Min Shaf Habibi", artist: "JadaL", url: "https://music.apple.com/us/search?term=Min%20Shaf%20Habibi%20JadaL" },
+    { title: "Yumain O Leila", artist: "JadaL", url: "https://music.apple.com/us/song/6764550891" }
   ];
 
   const wrap = document.getElementById("songList");
@@ -935,8 +935,7 @@ window.addEventListener("resize", ()=>{
     a.className = "song";
     a.target = "_blank";
     a.rel = "noopener noreferrer";
-    const term = encodeURIComponent(s.title + " " + s.artist);
-    a.href = `https://music.apple.com/us/search?term=${term}`;
+    a.href = s.url;
 
     a.innerHTML = `
       <div class="song-piece">
